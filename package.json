@@ -1,0 +1,12 @@
+{
+  "name": "battleships",
+  "version": "1.0.0",
+  "description": "\"A simple battleships game\"",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules ./src/main.js"
+  },
+  "author": "Anatol Karliński",
+  "license": "ISC"
+}
