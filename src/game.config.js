@@ -11,4 +11,4 @@ export default {
     BATTLESHIP: 5,
     DESTROYER: 4
   }
-}
+};

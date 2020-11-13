@@ -5,8 +5,14 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-modules ./src/main.js"
+    "start": "node --experimental-modules ./src/main.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
   },
   "author": "Anatol Karliński",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-plugin-node": "^11.1.0"
+  }
 }
