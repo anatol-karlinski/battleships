@@ -7,8 +7,6 @@ describe("createShip function", () => {
   const mockCoordiantes = ["A1", "A2", "A3", "A4", "A5"];
   const getRandomOrientationMock = () => orientationType.HORIZONTAL;
   const getCoordinatesForNewShipMock = () => mockCoordiantes;
-
-
   const createShip = createShipFactoryFunction(getRandomOrientationMock, getCoordinatesForNewShipMock);
 
   test("it should create new ship", () => {

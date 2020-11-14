@@ -1,6 +1,6 @@
 import createShip from './ship/ship.factory.js';
 
-export const createFleetFactoryFunction = (createShip) => {
+export const createFleetFactoryFunction = (_createShip) => {
   return ({ fleetComposition, boardDimensions, shipSizes }) => {
     const typesOfShips = Object.keys(fleetComposition);
 
@@ -9,7 +9,7 @@ export const createFleetFactoryFunction = (createShip) => {
       const createdShipsOfType = [];
 
       for (let i = 0; i < countOfShips; i++) {
-        createdShipsOfType.push(createShip(shipSizes, allShips, boardDimensions, shipType));
+        createdShipsOfType.push(_createShip(shipSizes, allShips, boardDimensions, shipType));
       }
 
       return allShips.concat(createdShipsOfType);

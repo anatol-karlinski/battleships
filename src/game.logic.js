@@ -7,15 +7,15 @@ const segmentWasAlreadyDestroyed = (ship, shotCoordinates) => ship.destroyedSegm
 
 export const gameIsOver = fleet => fleet.every(ship => ship.sunken);
 
-export const shootFactoryFunction = (getShipForCoordinates, convertCoordinatesToMatrixIndices) =>
+export const shootFactoryFunction = (_getShipForCoordinates, _convertCoordinatesToMatrixIndices) =>
   (fleet, coordinates, boardDimensions, board) => {
-    const shotPosition = convertCoordinatesToMatrixIndices(coordinates);
+    const shotPosition = _convertCoordinatesToMatrixIndices(coordinates);
 
     if (shotWasOutOfBounds(boardDimensions, shotPosition)) {
       return shotResultType.OUT_OF_BOUNDS;
     }
 
-    const ship = getShipForCoordinates(fleet, [coordinates]);
+    const ship = _getShipForCoordinates(fleet, [coordinates]);
 
     if (!ship) {
       board[shotPosition.columnIndex][shotPosition.rowIndex] = shotResultType.MISS;

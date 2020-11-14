@@ -76,10 +76,10 @@ const processFrame = (inputStream, line, gameConfig, fleet, board) => {
   inputStream.prompt();
 };
 
-export const runGameLoopFactoryFunction = (createBoard, createFleet) =>
+export const runGameLoopFactoryFunction = (_createBoard, _createFleet) =>
   (inputStream, gameConfig) => {
-    const board = createBoard(gameConfig.boardDimensions);
-    const fleet = createFleet(gameConfig);
+    const board = _createBoard(gameConfig.boardDimensions);
+    const fleet = _createFleet(gameConfig);
 
     initializeScreen(inputStream);
     renderBoard(board);
