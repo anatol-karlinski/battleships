@@ -8,6 +8,13 @@
 npm start
 ```
 
+## Running tests
+
+```
+npm install
+npm test
+```
+
 ## Running linter
 
 ```

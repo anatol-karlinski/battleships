@@ -2,7 +2,7 @@ import { getShipForCoordinates, convertCoordinatesToMatrixIndices } from './util
 import shotResultType from './types/shot-result.types.js';
 
 const shipWasDestroyed = ship => ship.destroyedSegments.length === ship.coordinates.length;
-const shotWasOutOfBounds = (boardDimensions, shotPosition) => shotPosition.rowIndex > boardDimensions.width - 1 || shotPosition.columnIndex > boardDimensions.height - 1;
+const shotWasOutOfBounds = (boardDimensions, shotPosition) => shotPosition.rowIndex > boardDimensions.height - 1 || shotPosition.columnIndex > boardDimensions.width - 1;
 const segmentWasAlreadyDestroyed = (ship, shotCoordinates) => ship.destroyedSegments.some(s => s === shotCoordinates);
 
 export const gameIsOver = fleet => fleet.every(ship => ship.sunken);

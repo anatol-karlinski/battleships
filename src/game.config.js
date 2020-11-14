@@ -1,11 +1,11 @@
 export default {
   boardDimensions: {
-    width: 10,
-    height: 10
+    width: 5,
+    height: 5
   },
   fleetComposition: {
     BATTLESHIP: 1,
-    DESTROYER: 2
+    DESTROYER: 0
   },
   shipSizes: {
     BATTLESHIP: 5,
