@@ -1,5 +1,7 @@
 # :ship: Battleships Game
 
+![](https://raw.githubusercontent.com/anatol-karlinski/battleships/main/snap.PNG)
+
 ## Running the game
 
 ```
