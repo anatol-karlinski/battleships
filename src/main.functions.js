@@ -26,25 +26,25 @@ const displayShotResultMessage = (shotResult, coordiantes) => {
 };
 
 export const renderBoard = (board) => {
-  console.log()
+  console.log();
 
-  const header = new Array(board[0].length).fill(0).map((_, i) => String.fromCharCode(65 + i)).join(' ')
-  console.log("  | " + header)
+  const header = new Array(board[0].length).fill(0).map((_, i) => String.fromCharCode(65 + i)).join(' ');
+  console.log("  | " + header);
   console.log("--|" + new Array(board[0].length * 2).fill(0).map(() => "-").join(""));
 
   board.forEach((row, rowIndex) => {
     const rowContent = `${(rowIndex + 1).toString().padEnd(2, ' ')}| ${row.map(e => {
       if (e === shotResultType.HIT)
-        return "X"
+        return "X";
       if (e === shotResultType.MISS)
-        return "O"
+        return "O";
 
-      return "*"
-    }).join(" ")}`
-    console.log(rowContent)
+      return "*";
+    }).join(" ")}`;
+    console.log(rowContent);
   });
 
-  console.log()
+  console.log();
 };
 
 export const handleUserInput = (userInput, fleet, boardDimensions, board) => {

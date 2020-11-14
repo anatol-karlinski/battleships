@@ -14,7 +14,7 @@ export const shootShip = (fleet, coordinates, boardDimensions, board) => {
   const ship = getShipForCoordinates(fleet, [coordinates]);
 
   if (!ship) {
-    board[boardPositionOfShot.columnIndex][boardPositionOfShot.rowIndex] = shotResultType.MISS
+    board[boardPositionOfShot.columnIndex][boardPositionOfShot.rowIndex] = shotResultType.MISS;
     return shotResultType.MISS;
   }
 
@@ -23,7 +23,7 @@ export const shootShip = (fleet, coordinates, boardDimensions, board) => {
   }
 
   ship.destroyedSegments.push(coordinates);
-  board[boardPositionOfShot.columnIndex][boardPositionOfShot.rowIndex] = shotResultType.HIT
+  board[boardPositionOfShot.columnIndex][boardPositionOfShot.rowIndex] = shotResultType.HIT;
 
   if (ship.destroyedSegments.length === ship.coordinates.length) {
     ship.sunken = true;
