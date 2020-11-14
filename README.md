@@ -11,5 +11,7 @@ npm start
 ## Running linter
 
 ```
+npm install
 npm run lint
+npm run lin:fix
 ```
