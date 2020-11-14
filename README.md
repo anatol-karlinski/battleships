@@ -1,6 +1,6 @@
-# :ship: Battleship Game
+# :ship: Battleships Game
 
-![](https://raw.githubusercontent.com/anatol-karlinski/battleships/main/snap.PNG)
+![](https://raw.githubusercontent.com/anatol-karlinski/battleships/main/snap.PNG=100x20)
 
 ## Running the game
 
