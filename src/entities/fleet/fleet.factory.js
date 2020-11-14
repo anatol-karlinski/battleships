@@ -1,18 +1,21 @@
-import { createNewShip } from './ship/ship.factory.js';
+import { createShip } from './ship/ship.factory.js';
 
-const createFleet = ({ fleetComposition, boardDimensions, shipSizes }) => {
-  const typesOfShips = Object.keys(fleetComposition);
+export const createFleetFactoryFunction = (createShip) => {
+  return ({ fleetComposition, boardDimensions, shipSizes }) => {
+    const typesOfShips = Object.keys(fleetComposition);
 
-  return typesOfShips.reduce((allShips, shipType) => {
-    const countOfShips = fleetComposition[shipType];
-    const createdShipsOfType = [];
+    return typesOfShips.reduce((allShips, shipType) => {
+      const countOfShips = fleetComposition[shipType];
+      const createdShipsOfType = [];
 
-    for (let i = 0; i < countOfShips; i++) {
-      createdShipsOfType.push(createNewShip(shipSizes, allShips, boardDimensions, shipType));
-    }
+      for (let i = 0; i < countOfShips; i++) {
+        createdShipsOfType.push(createShip(shipSizes, allShips, boardDimensions, shipType));
+      }
 
-    return allShips.concat(createdShipsOfType);
-  }, []);
+      return allShips.concat(createdShipsOfType);
+    }, []);
+  };
 };
 
+const createFleet = createFleetFactoryFunction(createShip);
 export default createFleet;

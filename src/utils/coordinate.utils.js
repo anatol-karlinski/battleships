@@ -17,9 +17,9 @@ export const getShipForCoordinates = (fleet, coordinates) => {
       }
     }
   }
+
   return ship;
 };
-
 
 export const coordinatesAreOccupied = (fleet, coordinates) =>
   !!getShipForCoordinates(fleet, coordinates);

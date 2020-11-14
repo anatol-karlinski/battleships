@@ -1,9 +1,6 @@
 import { getRandomPosition } from './../../../utils/random.utils.js';
-import { coordinatesAreOccupied } from './../../../utils/coordinate.utils.js';
+import { coordinatesAreOccupied, convertMatrixIndicesToCoordinates } from './../../../utils/coordinate.utils.js';
 import orientationType from './../../../types/orientation.types.js';
-
-const convertMatrixIndicesToCoordinates = (rowIndex, columnIndex) =>
-  `${String.fromCharCode(65 + rowIndex)}${columnIndex + 1}`;
 
 const getPositionOffsetForOrientation = (orientation, position, offset) =>
   orientation === orientationType.VERTICAL ?
