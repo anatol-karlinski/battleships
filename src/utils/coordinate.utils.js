@@ -6,8 +6,20 @@ export const convertCoordinatesToMatrixIndices = (coordinates) => ({
   columnIndex: Number(/[0-9]+/.exec(coordinates)[0]) - 1
 });
 
-export const getShipForCoordinates = (fleet, coordinates) =>
-  fleet.find(ship => ship.coordinates.some(coordinate => coordinates.includes(coordinate)));
+export const getShipForCoordinates = (fleet, coordinates) => {
+  let ship = void 0;
+
+  for (let i = 0; i < fleet.length; i++) {
+    for (let j = 0; j < fleet[i].coordinates.length; j++) {
+      if (coordinates.some(c => c === fleet[i].coordinates[j])) {
+        ship = fleet[i]
+        break;
+      }
+    }
+  }
+  return ship
+}
+
 
 export const coordinatesAreOccupied = (fleet, coordinates) =>
   !!getShipForCoordinates(fleet, coordinates);

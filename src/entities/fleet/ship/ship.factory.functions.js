@@ -6,14 +6,14 @@ const convertMatrixIndicesToCoordinates = (rowIndex, columnIndex) =>
   `${String.fromCharCode(65 + rowIndex)}${columnIndex + 1}`;
 
 const getPositionOffsetForOrientation = (orientation, position, offset) =>
-  orientation === orientation.VERTICAL ?
+  orientation === orientationType.VERTICAL ?
     { x: position.x, y: position.y + offset } :
     { x: position.x + offset, y: position.y };
 
 const getRandomCoordinates = (boardDimensions, shipSize, shipOrientation) => {
   let position = shipOrientation === orientationType.VERTICAL ?
-    getRandomPosition(boardDimensions.width - shipSize, boardDimensions.height) :
-    getRandomPosition(boardDimensions.width, boardDimensions.height - shipSize);
+    getRandomPosition(boardDimensions.width - 1, boardDimensions.height - 1 - shipSize) :
+    getRandomPosition(boardDimensions.width - 1 - shipSize, boardDimensions.height - 1);
 
   let randomShipCoordinates = [];
 
