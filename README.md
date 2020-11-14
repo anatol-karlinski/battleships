@@ -1,4 +1,6 @@
-# Battleship Game :D
+# :ship: Battleship Game
+
+!(https://raw.githubusercontent.com/anatol-karlinski/battleships/main/snap.PNG)
 
 ## Running the game
 
