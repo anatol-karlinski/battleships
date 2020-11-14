@@ -17,4 +17,4 @@ export const createShipFactoryFunction = (getRandomOrientation, getCoordinatesFo
   };
 
 const createShip = createShipFactoryFunction(getRandomOrientation, getCoordinatesForNewShip);
-export default createShip(getRandomOrientation, getCoordinatesForNewShip);
+export default createShip;

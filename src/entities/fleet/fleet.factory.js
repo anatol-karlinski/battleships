@@ -1,4 +1,4 @@
-import { createShip } from './ship/ship.factory.js';
+import createShip from './ship/ship.factory.js';
 
 export const createFleetFactoryFunction = (createShip) => {
   return ({ fleetComposition, boardDimensions, shipSizes }) => {
