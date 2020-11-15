@@ -3,7 +3,6 @@ import jest from 'jest-mock';
 import { createFleetFactoryFunction } from './fleet.factory';
 
 describe("createFleet function", () => {
-
   const fleetConfig = {
     fleetComposition: {
       DESTROYER: 2,
@@ -12,7 +11,6 @@ describe("createFleet function", () => {
     boardDimensions: {},
     shipSizes: {}
   };
-
   const shipsMock = [{
     type: shipType.DESTROYER,
     coordinates: ["A1", "A2", "A3", "A4"],

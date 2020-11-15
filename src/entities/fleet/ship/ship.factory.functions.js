@@ -8,11 +8,11 @@ const getPositionOffsetForOrientation = (orientation, position, offset) =>
     { x: position.x + offset, y: position.y };
 
 const getRandomCoordinates = (boardDimensions, shipSize, shipOrientation) => {
-  let position = shipOrientation === orientationType.VERTICAL ?
+  const position = shipOrientation === orientationType.VERTICAL ?
     getRandomPosition(boardDimensions.width - 1, boardDimensions.height - 1 - shipSize) :
     getRandomPosition(boardDimensions.width - 1 - shipSize, boardDimensions.height - 1);
 
-  let randomShipCoordinates = [];
+  const randomShipCoordinates = [];
 
   for (let i = 0; i < shipSize; i++) {
     const segmentPosition = getPositionOffsetForOrientation(shipOrientation, position, i);

@@ -15,6 +15,6 @@ const getRowNumber = (rowIndex) => (rowIndex + 1).toString().padEnd(2, ' ');
 const getRowContent = (row) => row.map(getCellSymbol).join(" ");
 
 export const renderEmptyLine = () => console.log();
-export const getHeader = (boardWidth) => new Array(boardWidth).fill(0).map((_, i) => convertIndexToAsciiChar(i)).join(' ');
-export const getHeaderSeparator = (boardWidth) => new Array(boardWidth * 2).fill(0).map(() => "-").join("");
+export const getHeader = (boardWidth) => Array.from({ length: boardWidth }).fill(0).map((_, i) => convertIndexToAsciiChar(i)).join(' ');
+export const getHeaderSeparator = (boardWidth) => Array.from({ length: boardWidth * 2 }).fill(0).map(() => "-").join("");
 export const getRow = (row, rowIndex) => `${getRowNumber(rowIndex)}| ${getRowContent(row)} `;

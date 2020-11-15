@@ -7,6 +7,8 @@
     "sourceType": "module"
   },
   "rules": {
+    "eol-last": "error",
+    "prefer-const": "error",
     "semi": "error",
     "no-process-exit": "off",
     "node/no-unsupported-features/node-builtins": "off"

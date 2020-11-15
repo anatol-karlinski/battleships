@@ -23,3 +23,5 @@ export const getShipForCoordinates = (fleet, coordinates) => {
 
 export const coordinatesAreOccupied = (fleet, coordinates) =>
   !!getShipForCoordinates(fleet, coordinates);
+
+export const stringIsValidCoordinates = (string) => /[A-Z]+[0-9]+$/.test(string);

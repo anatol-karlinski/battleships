@@ -1,28 +1,10 @@
-import { shoot, gameIsOver } from './game.logic.js';
+import { shoot, gameIsOver, getShotResultMessage } from './game.logic.js';
 import createFleet from './entities/fleet/fleet.factory.js';
 import createBoard from './entities/board/board.factory.js';
-import shotResultType from './types/shot-result.types.js';
+import { stringIsValidCoordinates } from './utils/coordinate.utils.js';
 import {
   renderEmptyLine, getHeader, getHeaderSeparator, getRow
 } from './utils/board-render.utils.js';
-
-const stringIsValidCoordinates = (string) => /[A-Z]+[0-9]+$/.test(string);
-
-const getShotResultMessage = (shotResult, coordiantes) => {
-  switch (shotResult) {
-    case shotResultType.HIT:
-      return `${coordiantes} - Hit!`;
-    case shotResultType.HIT_AND_SUNK:
-      return `${coordiantes} - Hit! Ship sunk!`;
-    case shotResultType.ALREADY_HIT:
-      return `${coordiantes} - Already hit!`;
-    case shotResultType.MISS:
-      return `${coordiantes} - Miss!`;
-    case shotResultType.OUT_OF_BOUNDS:
-      return `${coordiantes} - Out of bounds!`;
-    default: return;
-  }
-};
 
 const renderBoard = (board) => {
   renderEmptyLine();

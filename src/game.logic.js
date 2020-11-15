@@ -37,4 +37,21 @@ export const shootFactoryFunction = (_getShipForCoordinates, _convertCoordinates
     return shotResultType.HIT;
   };
 
+export const getShotResultMessage = (shotResult, coordiantes) => {
+  switch (shotResult) {
+    case shotResultType.HIT:
+      return `${coordiantes} - Hit!`;
+    case shotResultType.HIT_AND_SUNK:
+      return `${coordiantes} - Hit! Ship sunk!`;
+    case shotResultType.ALREADY_HIT:
+      return `${coordiantes} - Already hit!`;
+    case shotResultType.MISS:
+      return `${coordiantes} - Miss!`;
+    case shotResultType.OUT_OF_BOUNDS:
+      return `${coordiantes} - Out of bounds!`;
+    default:
+      return "";
+  }
+};
+
 export const shoot = shootFactoryFunction(getShipForCoordinates, convertCoordinatesToMatrixIndices);
