@@ -6,13 +6,13 @@ export const createFleetFactoryFunction = (_createShip) => {
 
     return typesOfShips.reduce((allShips, shipType) => {
       const countOfShips = fleetComposition[shipType];
-      const createdShipsOfType = [];
+      const allCreatedShips = [...allShips];
 
       for (let i = 0; i < countOfShips; i++) {
-        createdShipsOfType.push(_createShip(shipSizes, allShips, boardDimensions, shipType));
+        allCreatedShips.push(_createShip(shipSizes, allCreatedShips, boardDimensions, shipType));
       }
 
-      return allShips.concat(createdShipsOfType);
+      return allCreatedShips;
     }, []);
   };
 };

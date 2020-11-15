@@ -10,7 +10,7 @@ const renderBoard = (board) => {
   renderEmptyLine();
 
   const header = `  | ${getHeader(board[0].length)}`;
-  const topSeparator = `--| ${getHeaderSeparator(board[0].length)}`;
+  const topSeparator = `--|${getHeaderSeparator(board[0].length)}`;
 
   console.log(header);
   console.log(topSeparator);
